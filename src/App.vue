@@ -9,11 +9,17 @@
 
 <script>
 import FooterGuide from "./components/FooterGuide/FooterGuide";
-
+import {mapActions} from 'vuex'
 export default {
   name: "App",
   components: {
     FooterGuide,
+  },
+  mounted(){
+    this.getUserInfo()
+  },
+  methods: {
+    ...mapActions(['getUserInfo'])
   },
 };
 </script>
@@ -22,5 +28,4 @@ export default {
 a {
   text-decoration: none;
 }
-
 </style>
